@@ -1,5 +1,7 @@
+# Import all functions from my_programs module
 from my_programs import *
 
+# Store menu options with their corresponding function names
 MENU = {
     1: ("Swap Two Numbers", program_1_swap_numbers),
     2: ("GCD of Two Numbers", program_2_gcd),
@@ -18,38 +20,60 @@ MENU = {
 }
 
 
+# Function to display the menu
 def display_menu():
+    # Print menu heading
     print("\n========== FUNCTION MENU ==========")
+
+    # Display all menu options
     for key, value in MENU.items():
         print(f"{key}. {value[0]}")
+
+    # Display exit option
     print("0. Exit")
+
+    # Print menu footer
     print("===================================")
 
 
+# Main function
 def main():
 
+    # Read the number of executions from the user
     n = int(input("Enter No. of Executions: "))
 
+    # Repeat menu based on user input
     for i in range(n):
 
+        # Display current execution count
         print(f"\nExecution {i+1} of {n}")
 
+        # Show the menu
         display_menu()
 
+        # Read user's choice
         choice = int(input("Enter Your Choice: "))
 
+        # Exit if user selects 0
         if choice == 0:
             print("Thank You...")
             break
 
+        # Execute the selected function if the choice is valid
         elif choice in MENU:
             print("-" * 40)
-            MENU[choice][1]()       # Function Calling
+
+            # Call the selected function
+            MENU[choice][1]()
+
             print("-" * 40)
 
+        # Display error for invalid choice
         else:
             print("Invalid Choice!")
 
 
+# Start program execution
 if __name__ == "__main__":
+    # Call the main function
     main()
