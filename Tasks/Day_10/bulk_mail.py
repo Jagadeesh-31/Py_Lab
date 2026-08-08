@@ -1,4 +1,4 @@
-# day 25 - bulk mail with attachment
+# bulk mail with attachment
 # gmail smtp automation
 
 import smtplib
