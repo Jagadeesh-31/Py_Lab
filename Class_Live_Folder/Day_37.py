@@ -101,7 +101,7 @@ print(u1+u2)# here we are able to add both users watch history only beacuse
 # we use __add__ ()
 '''
 
-
+'''
 
 class WatchHistroy:
     """understanding watching"""
@@ -120,3 +120,45 @@ u1 = WatchHistroy(120)
 u2 = WatchHistroy(100)
 print(u1+u2)
 print(u1.__str__())
+
+
+'''
+# Abstractions 
+
+# Instagram 
+
+
+from abc import ABC, abstractmethod
+
+class Content(ABC):
+    @abstractmethod
+    def upload(self):
+        pass
+
+
+class Photo(Content):
+    def upload(self):
+        print("Photo is Uploading")
+        print("Photo is Compressing")
+        print("Photo upload with effects")
+
+
+class Video(Content):
+    def upload(self):
+        print("Video is uploading")
+        print("Encoding video")
+        print("Video compress without losing quality and upload")
+
+
+class Reel(Content):
+    def upload(self):
+        print("Adding effects to reels")
+        print("Uploading reel")
+        print("Reel is uploaded")
+
+
+contents = [Photo(), Video(), Reel()]
+
+for con in contents:
+    print(con)
+    con.upload()

@@ -199,11 +199,12 @@ user.watch("Vikram")
 user.watch(movie)
 user.watching_list(['89','Leo','salaar'])'''
 
+# managment System 
 
 # method overloading --> checking types of argument
 # hotstar --> one movie,more movie...
 
-
+'''
 class Hotstar:
     """checking type arguments usage """
     def movie_list(self,content):
@@ -215,3 +216,5 @@ class Hotstar:
 user = Hotstar()
 user.movie_list("vikram")
 user.movie_list(["Leo","Vikram","Salaar"])
+
+'''
